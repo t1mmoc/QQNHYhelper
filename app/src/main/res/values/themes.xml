@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 基于 Material3 DayNight：自动跟随系统暗色模式；
+         不覆盖颜色槽位，Android 12+ 可被 DynamicColors 动态取色覆盖 -->
+    <style name="Theme.QQReplyApp" parent="Theme.Material3.DayNight.NoActionBar" />
+</resources>
