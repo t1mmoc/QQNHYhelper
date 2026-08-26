@@ -3381,6 +3381,7 @@ id layout
 id left
 id leftToRight
 id legacy
+id licenseText
 id line1
 id line3
 id linear

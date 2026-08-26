@@ -46,6 +46,9 @@ public final class ViewTabSettingsBinding implements ViewBinding {
   public final MaterialButton importRuleButton;
 
   @NonNull
+  public final TextView licenseText;
+
+  @NonNull
   public final TextView projectLink;
 
   @NonNull
@@ -67,10 +70,10 @@ public final class ViewTabSettingsBinding implements ViewBinding {
       @NonNull MaterialButton clearLogButton, @NonNull TextView debugHint,
       @NonNull MaterialCardView debugLogCard, @NonNull TextView debugLogText,
       @NonNull MaterialCardView exportCard, @NonNull MaterialButton exportRuleButton,
-      @NonNull MaterialButton importRuleButton, @NonNull TextView projectLink,
-      @NonNull MaterialButton refreshLogButton, @NonNull MaterialCardView resetCard,
-      @NonNull MaterialButton resetRulesButton, @NonNull MaterialCardView themeCard,
-      @NonNull TextView themeStatus) {
+      @NonNull MaterialButton importRuleButton, @NonNull TextView licenseText,
+      @NonNull TextView projectLink, @NonNull MaterialButton refreshLogButton,
+      @NonNull MaterialCardView resetCard, @NonNull MaterialButton resetRulesButton,
+      @NonNull MaterialCardView themeCard, @NonNull TextView themeStatus) {
     this.rootView = rootView;
     this.aboutAppVersion = aboutAppVersion;
     this.clearLogButton = clearLogButton;
@@ -80,6 +83,7 @@ public final class ViewTabSettingsBinding implements ViewBinding {
     this.exportCard = exportCard;
     this.exportRuleButton = exportRuleButton;
     this.importRuleButton = importRuleButton;
+    this.licenseText = licenseText;
     this.projectLink = projectLink;
     this.refreshLogButton = refreshLogButton;
     this.resetCard = resetCard;
@@ -163,6 +167,12 @@ public final class ViewTabSettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.licenseText;
+      TextView licenseText = ViewBindings.findChildViewById(rootView, id);
+      if (licenseText == null) {
+        break missingId;
+      }
+
       id = R.id.projectLink;
       TextView projectLink = ViewBindings.findChildViewById(rootView, id);
       if (projectLink == null) {
@@ -201,7 +211,8 @@ public final class ViewTabSettingsBinding implements ViewBinding {
 
       return new ViewTabSettingsBinding((ScrollView) rootView, aboutAppVersion, clearLogButton,
           debugHint, debugLogCard, debugLogText, exportCard, exportRuleButton, importRuleButton,
-          projectLink, refreshLogButton, resetCard, resetRulesButton, themeCard, themeStatus);
+          licenseText, projectLink, refreshLogButton, resetCard, resetRulesButton, themeCard,
+          themeStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -71,6 +71,7 @@ id funcStatus
 id funcSwitch
 id importRuleButton
 id infoButton
+id licenseText
 id modeDark
 id modeFollow
 id modeLight
