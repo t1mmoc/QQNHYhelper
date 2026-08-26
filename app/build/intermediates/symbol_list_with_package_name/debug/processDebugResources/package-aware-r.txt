@@ -1,4 +1,4 @@
-com.qqreply.app
+com.nhyhelper.zhuang
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -2090,6 +2090,26 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color pal_blue_onPrimary
+color pal_blue_onPrimaryContainer
+color pal_blue_primary
+color pal_blue_primaryContainer
+color pal_green_onPrimary
+color pal_green_onPrimaryContainer
+color pal_green_primary
+color pal_green_primaryContainer
+color pal_orange_onPrimary
+color pal_orange_onPrimaryContainer
+color pal_orange_primary
+color pal_orange_primaryContainer
+color pal_pink_onPrimary
+color pal_pink_onPrimaryContainer
+color pal_pink_primary
+color pal_pink_primaryContainer
+color pal_purple_onPrimary
+color pal_purple_onPrimaryContainer
+color pal_purple_primary
+color pal_purple_primaryContainer
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2989,6 +3009,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_version_badge
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3003,6 +3024,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_arrow_back_black_24
+drawable ic_arrow_forward
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3012,6 +3034,7 @@ drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_home
+drawable ic_info_outline
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
 drawable ic_m3_chip_check
@@ -3021,6 +3044,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_quick_tile
 drawable ic_rules
 drawable ic_search_black_24
 drawable ic_settings
@@ -3113,6 +3137,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id aboutAppVersion
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3172,6 +3197,7 @@ id activity_chooser_view_content
 id add
 id addCategoryButton
 id addRuleFab
+id addSuffixButton
 id alertTitle
 id aligned
 id all
@@ -3220,6 +3246,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id clearLogButton
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3245,6 +3272,9 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
+id debugHint
+id debugLogCard
+id debugLogText
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3310,6 +3340,8 @@ id fragment_container_view_tag
 id fromInput
 id frost
 id fullscreen_header
+id funcStatus
+id funcSwitch
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3336,6 +3368,7 @@ id importRuleButton
 id included
 id indeterminate
 id info
+id infoButton
 id invisible
 id inward
 id is_pooling_container_tag
@@ -3382,6 +3415,9 @@ id matrix
 id message
 id middle
 id mini
+id modeDark
+id modeFollow
+id modeLight
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3426,6 +3462,8 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newSuffixInput
+id newSuffixLayout
 id noScroll
 id noState
 id none
@@ -3455,6 +3493,7 @@ id outline
 id outward
 id overshoot
 id packed
+id paletteRow
 id parallax
 id parent
 id parentPanel
@@ -3472,9 +3511,11 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
+id projectLink
 id radio
 id ratio
 id rectangles
+id refreshLogButton
 id report_drawn
 id resetCard
 id resetRulesButton
@@ -3488,7 +3529,8 @@ id row_index_key
 id ruleFrom
 id ruleSwitch
 id ruleTo
-id rulesRecyclerView
+id rulesListContainer
+id rulesToggle
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3512,8 +3554,11 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id serviceArrow
+id serviceCard
 id serviceStatus
-id serviceSwitch
+id sfxSwitch
+id sfxText
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3551,7 +3596,8 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
-id suffixInput
+id suffixListContainer
+id suffixToggle
 id supportScrollUp
 id tabMain
 id tabMode
@@ -3586,6 +3632,9 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id themeCard
+id themeModeGroup
+id themeStatus
 id time
 id title
 id titleDividerNoCustom
@@ -3609,6 +3658,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id versionBadge
 id vertical_only
 id view_offset_helper
 id view_transition
@@ -3742,6 +3792,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_theme
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3762,6 +3813,7 @@ layout dialog_add_rule
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_rule
+layout item_suffix
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3997,6 +4049,7 @@ string searchview_navigation_content_description
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
+string tile_label
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -4623,6 +4676,11 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_QQReplyApp
+style Theme_QQReplyApp_Blue
+style Theme_QQReplyApp_Green
+style Theme_QQReplyApp_Orange
+style Theme_QQReplyApp_Pink
+style Theme_QQReplyApp_Purple
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

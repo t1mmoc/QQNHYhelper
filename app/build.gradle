@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace 'com.qqreply.app'
+    namespace 'com.nhyhelper.zhuang'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.qqreply.app"
+        applicationId "com.nhyhelper.zhuang"
         minSdk 24
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
     }
 
     buildTypes {

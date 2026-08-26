@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qqreply.app"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.nhyhelper.zhuang"
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="24"
@@ -13,10 +13,10 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <permission
-        android:name="com.qqreply.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.nhyhelper.zhuang.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.qqreply.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.nhyhelper.zhuang.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +27,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.QQReplyApp" >
         <activity
-            android:name="com.qqreply.app.MainActivity"
+            android:name="com.nhyhelper.zhuang.MainActivity"
             android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>
@@ -36,10 +36,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.nhyhelper.zhuang.ThemeActivity"
+            android:exported="false"
+            android:label="主题" />
 
         <service
-            android:name="com.qqreply.app.QQAccessibilityService"
-            android:exported="false"
+            android:name="com.nhyhelper.zhuang.QQAccessibilityService"
+            android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
@@ -50,9 +54,21 @@
                 android:resource="@xml/accessibility_service_config" />
         </service>
 
+        <!-- 系统快捷设置面板的服务开关磁贴 -->
+        <service
+            android:name="com.nhyhelper.zhuang.QuickReplyTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_quick_tile"
+            android:label="@string/tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.qqreply.app.androidx-startup"
+            android:authorities="com.nhyhelper.zhuang.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

@@ -21,7 +21,58 @@
     <color name="md_theme_surface">#FFFBFE</color>
     <color name="md_theme_surfaceVariant">#E7E0EC</color>
     <color name="md_theme_tertiary">#7D5260</color>
+    <color name="pal_blue_onPrimary">#FFFFFF</color>
+    <color name="pal_blue_onPrimaryContainer">#000E67</color>
+    <color name="pal_blue_primary">#4156B8</color>
+    <color name="pal_blue_primaryContainer">#DDDEFF</color>
+    <color name="pal_green_onPrimary">#FFFFFF</color>
+    <color name="pal_green_onPrimaryContainer">#00201E</color>
+    <color name="pal_green_primary">#006A67</color>
+    <color name="pal_green_primaryContainer">#6FF7F0</color>
+    <color name="pal_orange_onPrimary">#FFFFFF</color>
+    <color name="pal_orange_onPrimaryContainer">#271900</color>
+    <color name="pal_orange_primary">#7C5700</color>
+    <color name="pal_orange_primaryContainer">#FFE085</color>
+    <color name="pal_pink_onPrimary">#FFFFFF</color>
+    <color name="pal_pink_onPrimaryContainer">#3E001D</color>
+    <color name="pal_pink_primary">#AD1A62</color>
+    <color name="pal_pink_primaryContainer">#FFD8E4</color>
+    <color name="pal_purple_onPrimary">#FFFFFF</color>
+    <color name="pal_purple_onPrimaryContainer">#21005D</color>
+    <color name="pal_purple_primary">#6750A4</color>
+    <color name="pal_purple_primaryContainer">#EADDFF</color>
     <string name="accessibility_service_description">QQNHY助手 - 自动替换聊天文本内容</string>
     <string name="app_name">QQNHY助手</string>
+    <string name="tile_label">QQNHY助手</string>
     <style name="Theme.QQReplyApp" parent="Theme.Material3.DayNight.NoActionBar"/>
+    <style name="Theme.QQReplyApp.Blue" parent="Theme.QQReplyApp">
+        <item name="colorPrimary">@color/pal_blue_primary</item>
+        <item name="colorOnPrimary">@color/pal_blue_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/pal_blue_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pal_blue_onPrimaryContainer</item>
+    </style>
+    <style name="Theme.QQReplyApp.Green" parent="Theme.QQReplyApp">
+        <item name="colorPrimary">@color/pal_green_primary</item>
+        <item name="colorOnPrimary">@color/pal_green_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/pal_green_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pal_green_onPrimaryContainer</item>
+    </style>
+    <style name="Theme.QQReplyApp.Orange" parent="Theme.QQReplyApp">
+        <item name="colorPrimary">@color/pal_orange_primary</item>
+        <item name="colorOnPrimary">@color/pal_orange_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/pal_orange_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pal_orange_onPrimaryContainer</item>
+    </style>
+    <style name="Theme.QQReplyApp.Pink" parent="Theme.QQReplyApp">
+        <item name="colorPrimary">@color/pal_pink_primary</item>
+        <item name="colorOnPrimary">@color/pal_pink_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/pal_pink_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pal_pink_onPrimaryContainer</item>
+    </style>
+    <style name="Theme.QQReplyApp.Purple" parent="Theme.QQReplyApp">
+        <item name="colorPrimary">@color/pal_purple_primary</item>
+        <item name="colorOnPrimary">@color/pal_purple_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/pal_purple_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/pal_purple_onPrimaryContainer</item>
+    </style>
 </resources>

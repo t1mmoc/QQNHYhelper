@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.qqreply.app-mergeDebugResources-30:/values-ka/values-ka.xml",
+            "outputFile": "com.nhyhelper.zhuang.app-mergeDebugResources-30:/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "C:\\Users\\46941\\.gradle\\caches\\transforms-4\\0164e24e93f117827867a4c48ec25a35\\transformed\\appcompat-1.6.1\\res\\values-ka\\values-ka.xml",

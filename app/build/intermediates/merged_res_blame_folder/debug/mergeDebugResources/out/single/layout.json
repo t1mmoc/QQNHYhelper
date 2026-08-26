@@ -1,30 +1,38 @@
 [
     {
-        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.qqreply.app-mergeDebugResources-31:\\layout\\dialog_add_rule.xml",
-        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.qqreply.app-main-34:\\layout\\dialog_add_rule.xml"
+        "merged": "com.nhyhelper.zhuang.app-mergeDebugResources-31:/layout/view_tab_settings.xml",
+        "source": "com.nhyhelper.zhuang.app-main-34:/layout/view_tab_settings.xml"
     },
     {
-        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.qqreply.app-mergeDebugResources-31:\\layout\\item_rule.xml",
-        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.qqreply.app-main-34:\\layout\\item_rule.xml"
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\view_tab_rules.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\view_tab_rules.xml"
     },
     {
-        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.qqreply.app-mergeDebugResources-31:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.qqreply.app-main-34:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\item_rule.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\item_rule.xml"
     },
     {
-        "merged": "com.qqreply.app-mergeDebugResources-31:/layout/activity_main.xml",
-        "source": "com.qqreply.app-main-34:/layout/activity_main.xml"
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\view_tab_settings.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\view_tab_settings.xml"
     },
     {
-        "merged": "com.qqreply.app-mergeDebugResources-31:/layout/view_tab_settings.xml",
-        "source": "com.qqreply.app-main-34:/layout/view_tab_settings.xml"
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\item_suffix.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\item_suffix.xml"
     },
     {
-        "merged": "com.qqreply.app-mergeDebugResources-31:/layout/view_tab_main.xml",
-        "source": "com.qqreply.app-main-34:/layout/view_tab_main.xml"
+        "merged": "com.nhyhelper.zhuang.app-mergeDebugResources-31:/layout/activity_theme.xml",
+        "source": "com.nhyhelper.zhuang.app-main-34:/layout/activity_theme.xml"
     },
     {
-        "merged": "com.qqreply.app-mergeDebugResources-31:/layout/view_tab_rules.xml",
-        "source": "com.qqreply.app-main-34:/layout/view_tab_rules.xml"
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\dialog_add_rule.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\dialog_add_rule.xml"
+    },
+    {
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-mergeDebugResources-31:\\layout\\view_tab_main.xml",
+        "source": "C:\\Users\\46941\\.gradle\\daemon\\8.7\\com.nhyhelper.zhuang.app-main-34:\\layout\\view_tab_main.xml"
     }
 ]

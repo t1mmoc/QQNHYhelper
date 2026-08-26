@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-55:12
+INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:2:1-55:12
 MERGED from [androidx.databinding:viewbinding:8.3.2] C:\Users\46941\.gradle\caches\transforms-4\00ff4692b104e8da57d06d577f53ea6f\transformed\jetified-viewbinding-8.3.2\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\46941\.gradle\caches\transforms-4\8bd4d9dae37da52b17c95d9eb6daa3e8\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\46941\.gradle\caches\transforms-4\da7eef9bfd481c898328418d9d6b2fd4\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -70,8 +70,8 @@ ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:7:
 	android:name
 		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:7:22-74
 application
-ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:9:5-37:19
-INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:9:5-37:19
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:9:5-54:19
+INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:9:5-54:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\46941\.gradle\caches\transforms-4\8bd4d9dae37da52b17c95d9eb6daa3e8\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\46941\.gradle\caches\transforms-4\8bd4d9dae37da52b17c95d9eb6daa3e8\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\46941\.gradle\caches\transforms-4\da7eef9bfd481c898328418d9d6b2fd4\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -100,7 +100,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\46941\.gradle\cach
 		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:13:9-48
-activity#com.qqreply.app.MainActivity
+activity#com.nhyhelper.zhuang.MainActivity
 ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:15:9-23:20
 	android:label
 		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:18:13-45
@@ -118,26 +118,52 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:21:27-74
-service#com.qqreply.app.QQAccessibilityService
-ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:25:9-35:19
+activity#com.nhyhelper.zhuang.ThemeActivity
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:25:9-28:34
+	android:label
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:28:13-31
 	android:exported
 		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:26:13-42
+service#com.nhyhelper.zhuang.QQAccessibilityService
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:30:9-40:19
+	android:exported
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:32:13-36
 	android:permission
-		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:28:13-79
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:33:13-79
 	android:name
-		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:26:13-51
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:31:13-51
 intent-filter#action:name:android.accessibilityservice.AccessibilityService
-ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:29:13-31:29
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:34:13-36:29
 action#android.accessibilityservice.AccessibilityService
-ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:30:17-92
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:35:17-92
 	android:name
-		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:30:25-89
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:35:25-89
 meta-data#android.accessibilityservice
-ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:32:13-34:72
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:37:13-39:72
 	android:resource
-		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:34:17-69
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:33:17-60
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:38:17-60
+service#com.nhyhelper.zhuang.QuickReplyTileService
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:43:9-52:19
+	android:label
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:47:13-47
+	android:exported
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:45:13-36
+	android:permission
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:48:13-77
+	android:icon
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:46:13-51
+	android:name
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:44:13-50
+intent-filter#action:name:android.service.quicksettings.action.QS_TILE
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:49:13-51:29
+action#android.service.quicksettings.action.QS_TILE
+ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:50:17-87
+	android:name
+		ADDED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml:50:25-84
 uses-sdk
 INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\46941\Desktop\QQReplyApp\app\src\main\AndroidManifest.xml
@@ -260,7 +286,7 @@ ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-
 		ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
-permission#com.qqreply.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.nhyhelper.zhuang.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
@@ -270,7 +296,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
-uses-permission#com.qqreply.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.nhyhelper.zhuang.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\46941\.gradle\caches\transforms-4\4e8c0daed3db1507015c94b99b3e3d73\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
