@@ -1,4 +1,4 @@
-package com.nhyhelper.zhuang
+package com.moe.nekopet
 
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.Context

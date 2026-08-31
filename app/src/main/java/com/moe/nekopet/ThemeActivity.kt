@@ -1,4 +1,4 @@
-package com.nhyhelper.zhuang
+package com.moe.nekopet
 
 import android.content.res.Configuration
 import android.graphics.Color
@@ -14,7 +14,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.google.android.material.color.DynamicColors
-import com.nhyhelper.zhuang.databinding.ActivityThemeBinding
+import com.moe.nekopet.databinding.ActivityThemeBinding
 
 class ThemeActivity : AppCompatActivity() {
 

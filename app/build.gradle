@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.nhyhelper.zhuang'
+    namespace 'com.moe.nekopet'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.nhyhelper.zhuang"
+        applicationId "com.moe.nekopet"
         minSdk 24
         targetSdk 34
         versionCode 3

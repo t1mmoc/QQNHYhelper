@@ -2,8 +2,9 @@
 <accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
     android:accessibilityEventTypes="typeWindowStateChanged|typeViewTextChanged|typeViewClicked"
     android:accessibilityFeedbackType="feedbackGeneric"
-    android:accessibilityFlags="flagRetrieveInteractiveWindows|flagReportViewIds|flagDefault"
+    android:accessibilityFlags="flagRetrieveInteractiveWindows|flagReportViewIds|flagDefault|flagRequestFilterKeyEvents"
     android:canRetrieveWindowContent="true"
+    android:canRequestFilterKeyEvents="true"
     android:description="@string/accessibility_service_description"
     android:notificationTimeout="50"
     android:packageNames="com.tencent.mobileqq,com.tencent.mobileqqi"/>

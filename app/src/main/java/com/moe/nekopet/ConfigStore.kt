@@ -1,4 +1,4 @@
-package com.nhyhelper.zhuang
+package com.moe.nekopet
 
 import android.content.Context
 import org.json.JSONArray
@@ -162,30 +162,55 @@ object ConfigStore {
         prefs.edit().putString(KEY_CONFIG, obj.toString()).apply()
     }
 
+    /** 默认配置：以「猫娘」为默认启用的分类 */
     fun defaultCategories(suffix: String = DEFAULT_SUFFIX): MutableList<Category> = mutableListOf(
+        catgirlPreset(active = true),
         Category(
             "默认",
             mutableListOf(Rule("你", "缸"), Rule("我", "小薄饼群主酱")),
-            active = true,
+            active = false,
             suffixes = mutableListOf(Suffix(suffix, true))
-        ),
-        catgirlPreset()
+        )
     )
 
-    /** 预设的猫娘分类（不默认启用，方便切换到猫娘口癖） */
-    fun catgirlPreset(): Category = Category(
+    /**
+     * 预设的猫娘分类。
+     *
+     * 防递归约束（新增规则/后缀时必须遵守，否则会出现替换逐次膨胀）：
+     * 1. 规则的 to 不得包含任何规则的 from（含自身），否则替换结果会被再次匹配；
+     * 2. 规则的 to 不得包含其它规则的 from，否则形成 A→B→C 的链式替换；
+     * 3. 后缀不得包含任何规则的 from，因为后缀会追加进输入框并再次参与替换。
+     *
+     * 规则顺序：长词在前、单字在后。这样「对不起」先整体替换，
+     * 不会先被单字规则「不」切成「对唔起」而失效。
+     */
+    fun catgirlPreset(active: Boolean = false): Category = Category(
         "猫娘",
         mutableListOf(
+            // —— 长词优先（先于单字规则执行）——
+            Rule("喜欢", "最爱", true),
+            Rule("谢谢", "多谢主人喵", true),
+            Rule("对不起", "喵呜呜", true),
+            Rule("没关系", "喵喵", true),
+            Rule("吃饭", "吃猫粮", true),
+            Rule("睡觉", "蜷着睡", true),
+            Rule("生气", "炸毛", true),
+            Rule("开心", "呼噜呼噜", true),
+            Rule("抱抱", "蹭蹭", true),
+            Rule("摸摸", "蹭蹭", true),
+            Rule("好的", "好喵", true),
+            Rule("哈哈", "喵喵喵", true),
+            // —— 单字口癖（放最后，避免提前切碎长词）——
             Rule("我", "本喵", true),
             Rule("你", "主人", true),
             Rule("啊", "喵", true),
             Rule("呢", "喵", true),
             Rule("吗", "喵", true),
             Rule("嗯", "喵", true),
-            Rule("好的", "好喵", true),
-            Rule("哈哈", "喵喵喵", true)
+            Rule("是", "系", true),
+            Rule("不", "唔", true)
         ),
-        active = false,
+        active = active,
         suffixes = mutableListOf(
             Suffix("喵~", true),
             Suffix("喵喵", true),
@@ -197,7 +222,18 @@ object ConfigStore {
             Suffix("(๑•̀ㅂ•́)و✧", true),
             Suffix("ฅ(♡ơ ₃ơ)ฅ", true),
             Suffix("嘻嘻", true),
-            Suffix("喵呜♡", true)
+            Suffix("喵呜♡", true),
+            // —— 新增：动作/颜文字类（均不含任何规则的 from）——
+            Suffix("喵呜呜~", true),
+            Suffix("(=^･ω･^=)", true),
+            Suffix("(´ฅω•ฅ｀)", true),
+            Suffix("蹭蹭主人~", true),
+            Suffix("ฅ^•ﻌ•^ฅ", true),
+            Suffix("呼噜呼噜~", true),
+            Suffix("喵咪蹭蹭~", true),
+            Suffix("想被摸头喵~", true),
+            Suffix("最爱主人啦喵~", true),
+            Suffix("尾巴摇摇喵~", true)
         )
     )
 

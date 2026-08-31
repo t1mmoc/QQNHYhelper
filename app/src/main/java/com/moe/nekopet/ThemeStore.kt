@@ -1,8 +1,8 @@
-package com.nhyhelper.zhuang
+package com.moe.nekopet
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
-import com.nhyhelper.zhuang.R
+import com.moe.nekopet.R
 
 /** 明暗模式 */
 enum class ThemeMode { FOLLOW, LIGHT, DARK }

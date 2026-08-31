@@ -28,5 +28,5 @@
     <color name="md_theme_outline">#79747E</color>
     <color name="md_theme_outlineVariant">#CAC4D0</color>
     <!-- Launcher -->
-    <color name="ic_launcher_background">#6750A4</color>
+    <color name="ic_launcher_background">#F3E8FF</color>
 </resources>

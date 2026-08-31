@@ -41,7 +41,7 @@
             android:id="@+id/appLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="QQNHY助手"
+            android:text="猫娘宠物魔法"
             android:textAppearance="@style/TextAppearance.Material3.DisplayMedium"
             android:textStyle="bold"
             android:textColor="?attr/colorPrimary"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="QQ自动回复替换助手"
+            android:text="领养一只专属于你的猫娘喵～"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -67,6 +67,8 @@
             android:paddingEnd="14dp"
             android:paddingBottom="4dp"
             android:text=""
+            android:clickable="true"
+            android:focusable="true"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
             android:textColor="?attr/colorPrimary" />
 
@@ -98,7 +100,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="软件功能"
+                        android:text="陪伴状态"
                         android:textAppearance="@style/TextAppearance.Material3.TitleSmall" />
 
                     <TextView
@@ -106,7 +108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="替换功能已开启"
+                        android:text="魔法生效中，猫娘正在陪着你"
                         android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                         android:textColor="?attr/colorOnSurfaceVariant" />
 
@@ -151,7 +153,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="无障碍服务"
+                        android:text="猫娘显现"
                         android:textAppearance="@style/TextAppearance.Material3.TitleSmall" />
 
                     <TextView
@@ -167,7 +169,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="点击前往系统设置启用"
+                        android:text="点击前往系统设置，授予权限后猫娘才能显现"
                         android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                         android:textColor="?attr/colorOnSurfaceVariant" />
 

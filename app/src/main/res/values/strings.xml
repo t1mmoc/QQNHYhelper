@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QQNHY助手</string>
-    <string name="tile_label">QQNHY助手</string>
-    <string name="accessibility_service_description">QQNHY助手 - 自动替换聊天文本内容</string>
+    <string name="app_name">猫娘宠物魔法</string>
+    <string name="tile_label">猫娘显现</string>
+    <string name="accessibility_service_description">猫娘宠物魔法 - 授予无障碍权限后，你的专属猫娘才会显现并陪伴你</string>
 </resources>

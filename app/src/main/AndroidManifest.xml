@@ -2,9 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- ⚠️ 本应用必须保持「零 uses-permission」，这是隐藏桌面图标的前提。
+         Android 10（API 29）起，系统对所有申请了权限的应用都会合成一个桌面入口
+         （synthesized activity），导致图标无法隐藏、点击还会跳到应用详情页。
+         官方豁免条件之一是「应用不申请任何权限」——本应用正是靠这条实现真隐藏。
+         因此：不得加 FOREGROUND_SERVICE、POST_NOTIFICATIONS、RECEIVE_BOOT_COMPLETED 等任何权限；
+         新增功能前请先确认不会引入 uses-permission（含第三方库间接引入）。 -->
+
+    <!-- AGP 会自动注入这条 uses-permission（供动态广播接收器校验用），
+         它同样会破坏上面的零权限豁免，必须移除。 -->
+    <uses-permission
+        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        tools:node="remove" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +21,29 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.QQReplyApp">
 
+        <!-- 主界面：不再持有 LAUNCHER 入口（入口交给下面的别名）；
+             excludeFromRecents 使其不出现在「最近任务 / 任务后台」中 -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name" />
+
+        <!-- 桌面图标别名：隐藏图标时只需禁用这个组件。
+             MainActivity 本身不受影响，仍可被显式 Intent 启动（通知入口、adb am start 均走显式 Intent） -->
+        <activity-alias
+            android:name=".LauncherAlias"
+            android:targetActivity=".MainActivity"
+            android:exported="true"
+            android:enabled="true"
+            android:excludeFromRecents="true"
+            android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity-alias>
 
         <activity
             android:name=".ThemeActivity"
@@ -50,6 +73,20 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+        <!-- 保活 + 图标恢复兜底服务。
+             注意：不能声明为前台服务（foregroundServiceType 需要 FOREGROUND_SERVICE 权限），
+             否则会破坏零权限豁免、图标就藏不住了。这里用普通 START_STICKY 服务。 -->
+        <service
+            android:name=".KeepAliveService"
+            android:exported="false" />
+
+        <!-- 周期看门狗（JobScheduler）。
+             BIND_JOB_SERVICE 写在 service 的 permission 属性上，表示「系统绑定本服务时需持有的权限」，
+             不属于本应用申请的权限，因此不会破坏零权限豁免（BIND_ACCESSIBILITY_SERVICE 同理）。 -->
+        <service
+            android:name=".KeepAliveJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
     </application>
 </manifest>
