@@ -135,7 +135,6 @@ class MainActivity : AppCompatActivity() {
         setupSettingsButtons()
         setupHideControls()
         setupDebugLog()
-        setupInfoButton()
         setupVersionBadge()
         applyNavVisibility()
         updateServiceStatus()
@@ -247,34 +246,26 @@ class MainActivity : AppCompatActivity() {
             if (isPagesUnlocked()) android.view.View.VISIBLE else android.view.View.GONE
     }
 
-    // ---------- 功能介绍弹窗 ----------
-
-    private fun setupInfoButton() {
-        binding.tabMain.infoButton.setOnClickListener {
-            MaterialAlertDialogBuilder(this)
-                .setTitle("关于本软件")
-                .setMessage(
-                    "【功能介绍】\n" +
-                        "· 在 QQ 中实时改写输入框文本\n" +
-                        "· 支持自定义替换规则与规则分类\n" +
-                        "· 句末随机附加文字，可自由编辑\n" +
-                        "· 内置猫娘等预设口癖，一键切换\n\n" +
-                        "【使用前提】\n" +
-                        "使用前需先在系统「无障碍」中开启本服务的开关。\n\n" +
-                        "【额外声明】\n" +
-                        "在 QQ 里直接安装本软件会导致无障碍功能无法启动。请卸载后在其他应用（如文件管理）中重新安装。"
-                )
-                .setPositiveButton("知道了", null)
-                .show()
-        }
-    }
-
     // ---------- 服务状态 / 功能开关 ----------
 
     private fun setupServiceCard() {
         binding.tabMain.serviceCard.setOnClickListener {
-            openAccessibilitySettings()
+            showAccessibilityGuideDialog()
         }
+    }
+
+    /** 点击服务卡片时先确认，再跳转系统无障碍设置 */
+    private fun showAccessibilityGuideDialog() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("开启无障碍权限")
+            .setMessage(
+                "请选择「猫娘宠物魔法」并开启“无障碍”权限：\n\n" +
+                    "在无障碍设置页面中找到「猫娘宠物魔法」，\n" +
+                    "将其开关打开即可使用实时替换功能。"
+            )
+            .setPositiveButton("去开启") { _, _ -> openAccessibilitySettings() }
+            .setNegativeButton("取消", null)
+            .show()
     }
 
     private val funcKey = "func_enabled"
@@ -306,10 +297,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openAccessibilitySettings() {
+        // 直达「猫娘宠物魔法」的无障碍服务设置页，打开后即是本应用的开关，用户无需在列表中滑动查找
+        val component = ComponentName(this, QQAccessibilityService::class.java)
+        // 使用字面量字符串，避免部分 compileSdk 常量缺失
+        val intent = Intent("android.settings.ACCESSIBILITY_DETAILS_SETTINGS")
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            .putExtra("android.intent.extra.COMPONENT_NAME", component)
         try {
-            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+            startActivity(intent)
         } catch (e: Exception) {
-            startActivity(Intent(Settings.ACTION_SETTINGS))
+            // 个别 ROM 不支持直达单服务，回退到无障碍列表页
+            try {
+                startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+            } catch (e2: Exception) {
+                startActivity(Intent(Settings.ACTION_SETTINGS))
+            }
         }
     }
 
@@ -751,17 +753,6 @@ class MainActivity : AppCompatActivity() {
 
     // ---------- 隐藏应用自身（桌面图标 / 最近任务） ----------
 
-    private val notifyPermLauncher = registerForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { granted ->
-        toast(if (granted) "通知权限已授予" else "未授予通知权限，将不会自动隐藏图标")
-        if (granted && darkPrefs().getBoolean("auto_hide_icon", true)) {
-            AppHider.setLauncherIconHidden(this, true)
-            AppHider.showRecoveryNotification(this)
-        }
-        updateHideStatus()
-    }
-
     private fun setupHideControls() {
         // 先赋初值再注册监听，避免初始化时误触发一次回调
         binding.tabSettings.autoHideSwitch.isChecked =
@@ -772,10 +763,9 @@ class MainActivity : AppCompatActivity() {
                 AppHider.setLauncherIconHidden(this, false)
                 AppHider.cancelRecoveryNotification(this)
                 toast("已恢复桌面图标")
-            } else if (AppHider.hasNotificationPermission(this)) {
+            } else {
                 AppHider.setLauncherIconHidden(this, true)
-                AppHider.showRecoveryNotification(this)
-                toast("已隐藏桌面图标")
+                toast("已隐藏桌面图标（恢复方式：关闭无障碍服务）")
             }
             updateHideStatus()
         }
@@ -792,10 +782,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateHideStatus() {
         val hidden = AppHider.isLauncherIconHidden(this)
-        val hasPerm = AppHider.hasNotificationPermission(this)
         binding.tabSettings.hideStatusText.text = when {
-            hidden -> "状态：桌面图标已隐藏（通知栏可重新打开）"
-            !hasPerm -> "状态：未授予通知权限，暂不隐藏（否则无法回到应用）"
+            hidden -> "状态：桌面图标已隐藏\n恢复方式：关闭无障碍服务 → 自动恢复显示"
             else -> "状态：桌面图标正常显示"
         }
     }

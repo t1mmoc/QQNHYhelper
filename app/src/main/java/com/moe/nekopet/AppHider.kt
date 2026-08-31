@@ -105,40 +105,7 @@ object AppHider {
         )
     }
 
-    /** 图标隐藏时显示一条常驻通知，作为重新打开应用的入口 */
-    fun showRecoveryNotification(context: Context) {
-        if (!hasNotificationPermission(context)) return
-        createChannel(context)
-        val intent = Intent(context, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        }
-        val piFlags = PendingIntent.FLAG_UPDATE_CURRENT or
-            (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) PendingIntent.FLAG_IMMUTABLE else 0)
-        val pi = PendingIntent.getActivity(context, 0, intent, piFlags)
-        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_home)
-            .setContentTitle("猫娘宠物魔法")
-            .setContentText("图标已隐藏，点此打开设置")
-            .setContentIntent(pi)
-            .setOngoing(true)
-            .setPriority(NotificationCompat.PRIORITY_MIN)
-            .setCategory(NotificationCompat.CATEGORY_SERVICE)
-            .build()
-        NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, notification)
-    }
-
     fun cancelRecoveryNotification(context: Context) {
         NotificationManagerCompat.from(context).cancel(NOTIFICATION_ID)
-    }
-
-    private fun createChannel(context: Context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID, "隐藏入口", NotificationManager.IMPORTANCE_MIN
-            ).apply {
-                description = "桌面图标隐藏后，用于重新打开应用"
-            }
-            context.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
-        }
     }
 }

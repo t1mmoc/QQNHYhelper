@@ -182,8 +182,9 @@ class QQAccessibilityService : AccessibilityService() {
 
     /**
      * 服务开启后按设置隐藏桌面图标。
-     * 无条件隐藏（需求：无障碍服务开启即自动隐藏）；通知权限只影响「恢复通知」——
-     * 有权限则发一条点击打开的通知，无权限则静默隐藏（用户可从系统设置关闭无障碍服务来恢复图标）。
+     * 无条件隐藏（需求：无障碍服务开启即自动隐藏），不依赖通知权限。
+     * 不发送任何「恢复通知」；恢复入口统一走 restoreIconIfAccessibilityOff：
+     * 关闭无障碍服务（或从系统设置重新显示）即可让桌面图标自动恢复，无需通知。
      */
     private fun applyAutoHide() {
         try {
@@ -195,15 +196,10 @@ class QQAccessibilityService : AccessibilityService() {
                 // 历史上正是该路径抛出 FragmentManager 异常并带崩整个进程。
                 MainActivity.finishIfOpen()
                 AppHider.setLauncherIconHidden(this, true)
-                addLog("已隐藏桌面图标")
+                addLog("已隐藏桌面图标（恢复方式：关闭无障碍服务）")
             }
             // 注：本应用保持零权限，Android 10+ 的「合成桌面入口」豁免因此生效，
             // 禁用别名后图标会真正从桌面消失，不再需要任何重启桌面的 hack。
-            if (AppHider.hasNotificationPermission(this)) {
-                AppHider.showRecoveryNotification(this)
-            } else {
-                addLog("无通知权限（零权限设计），跳过恢复通知")
-            }
         } catch (e: Throwable) {
             Log.e(TAG, "applyAutoHide 异常: " + e.message)
         }

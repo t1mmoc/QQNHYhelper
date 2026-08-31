@@ -1,1 +1,16 @@
 /tmp/
+*.keystore
+keystore.properties
+
+# Gradle & Android build artifacts
+.gradle/
+.gradle-uathome/
+build/
+app/build/
+local.properties
+.apk
+apk_out/
+.DS_Store
+*.log
+*.iml
+.idea/

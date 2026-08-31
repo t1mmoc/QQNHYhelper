@@ -20,21 +20,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/infoButton"
-                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top|end"
-                android:contentDescription="功能介绍"
-                android:insetLeft="0dp"
-                android:insetRight="0dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                app:icon="@drawable/ic_info_outline"
-                app:iconSize="20dp"
-                app:iconTint="?attr/colorOnSurfaceVariant" />
-
         </FrameLayout>
 
         <TextView
